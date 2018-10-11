@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>WEB1~2</title>
+  <link rel="stylesheet" href="style.css">
+  <script type="text/javascript" src="color.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+  <h1><a href="index.html">WEB</a></h1>
+  <input id="night_day" type="button" value="night" onclick="
+    nightDayHandler(this);">
+  <div class="grid">
+    <ol>
+      <li><a onclick="
+        fetch('html').then(function(response){
+          response.text().then(function(text){
+            document.querySelector('article').innerHTML=text;
+          })
+        });
+      ">HTML</a></li>
+      <li><a onclick="
+        fetch('css').then(function(response){
+          response.text().then(function(text){
+            document.querySelector('article').innerHTML=text;
+          })
+        });
+      ">CSS</a></li>
+      <li><a onclick="
+        fetch('javascript').then(function(response){
+          response.text().then(function(text){
+            document.querySelector('article').innerHTML=text;
+          })
+        });
+      ">JavaScript</a></li>
+    </ol>
+
+    <article>
+
+    </article>
+  </div>
+</body>
+</html>

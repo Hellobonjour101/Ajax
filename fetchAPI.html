@@ -1,0 +1,64 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <!--
+    Ajax를 사용하기 위해서는 서버와 연결이 되어 있어야 하므로
+    localhost:8080으로 인터넷 브라우저를 확인해야 한다. (파일을 직접 열지 않는다.)
+    보안상 서버와 연결되어 있어야 작동한다.
+
+    Ajax를 이용하면, sing-page application을 만들 수 있다.
+    -->
+  </head>
+  <body>
+    <input type="button" value="fetch" onclick="
+      /*
+      fetch('css').then(function(response){
+        response.text().then(function(text){
+          alert('text');
+        })
+      })
+      */
+
+      /*
+      function callBackMe(){
+        console.log('response end');
+      }
+      */
+      callBackMe = function(){
+        console.log('response end');
+      }
+
+      /*
+      fetch('html').then(callBackMe);
+      */ 
+      fetch('javascript').then(function(response){
+        console.log(response.status);
+        if(response.status=='404'){
+          alert('Not found');
+        }
+      });
+      console.log(1);
+      console.log(2);
+    ">
+    <!--
+    1. fetch('html') = 웹브라우저에게 "html 파일을 서버에 요청해줘"라는 명령어.
+    이때, Chrome Inspector의 network를 보면 html이라는 파일을 다운 받는다.
+
+    2. .then()함수는 응답이 끝난 후 특정 함수를 실행하도록 정의된 명령어.
+
+    3. Asynchronous(비동기적) **Ajax의 특징
+    fetch명령어가 실행되면서 console.log명령어가 실행되고,
+    fetch명령어의 응답이 끝나면, then명령어가 실행되어
+    비동기적(병렬적) 작동이 일어난다.
+          console의 결과는 아래와 같다.
+          1
+          2
+          response end
+
+    4. .then 뒤의 함수자리에는 함수의 이름(callBackMe)가 와도 되고,
+    함수의 내용(function(){console.log()})가 와도 된다.
+    하지만 이 경우, 함수의 prameter값으로는 response 객체가 온다고 정의 되어있다.
+    -->
+  </bod>
+</html>
