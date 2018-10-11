@@ -38,12 +38,6 @@
       }else{
         fetchPage('welcome');
       }
-      //1. 브라우저 url창에 주소를 입력함과 동시에 실행되는 기능.
-      fetch('list').then(function(response){
-        response.text().then(function(text){
-          document.querySelector('#nav').innerHTML=text;
-        })
-      });
     </script>
   </div>
 </body>
