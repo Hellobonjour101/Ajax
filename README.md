@@ -40,7 +40,8 @@
    <h3>Polyfill</h3>
    버전이 맞지 않는 브라우저나, 구버전의 브라우저 모두 fatch를 사용 할 수 있도록 돕는 API.<br> 
    다운로드: https://github.com/github/fetch<br> 
-   자신의 index.html이 있는 디렉토리(파일)에 넣는다.<br><br>
+   자신의 index.html이 있는 디렉토리(파일)에 넣는다.<br>
+   script태그에 해당파일의 위치를 적어.<br><br>
    
    그 후, 크롬 inspector에 가서 network를 통해 fatch.js가 잘 동작하는지 (status:200) 확인하자. <br>
 </p>
