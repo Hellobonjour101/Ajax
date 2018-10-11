@@ -1,0 +1,59 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>WEB1~2</title>
+  <link rel="stylesheet" href="style.css">
+  <script type="text/javascript" src="color.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+  <h1><a href="#!welcome" onclick="fetchPage('welcome')">WEB</a></h1>
+  <input id="night_day" type="button" value="night" onclick="
+    nightDayHandler(this);">
+  <div class="grid">
+    <ol id="nav">
+
+    </ol>
+    <article>
+    </article>
+
+    <script type="text/javascript">
+      //2.fetchPage함수가 실행된다.
+      function fetchPage(name){
+        fetch(name).then(function(response){
+          response.text().then(function(text){
+            document.querySelector('article').innerHTML=text;
+          })
+        });
+      }
+
+      //1. 브라우저 url창에 주소를 입력했을 때!
+      if(location.hash){
+        //#!까지 2글자니까 substr(2)를 해야 한다.
+        //fetchPage(name): name에 들어가는 prameter값은 해쉬태그가 없으므로.
+        fetchPage(location.hash.substr(2));
+      }else{
+        fetchPage('welcome');
+      }
+      //1. 브라우저 url창에 주소를 입력함과 동시에 실행되는 기능.
+      fetch('list').then(function(response){
+        response.text().then(function(text){
+          document.querySelector('#nav').innerHTML=text;
+        })
+      });
+
+      /*
+      3. 만약에 list(글목록)에 새로운 것을 추가하고 싶다면,
+      list파일에 가서 새로운 <li>태그를 만들면 완성된다.
+
+      ex. Ajax파일을 새로 만들고 싶다면,
+      ajax의 데이터가 들어있는 파일을 하나 만들고, list파일에 <li>Ajax</li>를 추가한다.
+
+      --> 엄하게 다른 파일을 건드리거나, 이미 작성된 코드를 잘못 건드리는 실수를 줄인다.
+      --> 코드를 compact하게 만들 수 있다.
+      */
+    </script>
+  </div>
+</body>
+</html>
