@@ -29,12 +29,20 @@
         });
       }
 
+      //1. 브라우저 url창에 주소를 입력했을 때!
       if(location.hash){
         //#!까지 2글자니까 substr(2)를 해야 한다.
+        //fetchPage(name): name에 들어가는 prameter값은 해쉬태그가 없으므로.
         fetchPage(location.hash.substr(2));
       }else{
         fetchPage('welcome');
       }
+      //1. 브라우저 url창에 주소를 입력함과 동시에 실행되는 기능.
+      fetch('list').then(function(response){
+        response.text().then(function(text){
+          document.querySelector('#nav').innerHTML=text;
+        })
+      });
     </script>
   </div>
 </body>
