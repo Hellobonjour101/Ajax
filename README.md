@@ -13,7 +13,7 @@
       });
    </span><br><br>
    
-   이경우, response객체가 console창에 출려된다. <br>
+   이경우, response객체가 console창에 출된다. <br>
    status:200 이라는 말은 서버가 파일을 잘 찾아서 응답해줬다는 상태메세지.<br>
    status:404 라는 말은 파일을 찾지 못했다는 상태메세지.<br>
 </p>
