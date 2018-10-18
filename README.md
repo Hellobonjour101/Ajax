@@ -1,7 +1,7 @@
 # Ajax
 <p>
    <h3>Ajax</h3>
-   *function readMe(){} 
+   *function readMe(){} <br>
     readMe = function(){} 와 같은 함수는 <u>이름이 있는 함수</u>이다. <br>
    *function (response){}와 같은 함수는 이름이 없는 <strong>익명함수</strong>라고 한다. <br><br>
    
